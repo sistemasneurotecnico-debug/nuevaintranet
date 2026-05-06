@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroDX Intranet | Cerebro Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container" id="app">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="logo-section">
+                <div class="neuro-logo">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h1 class="logo-text">NEURO<span>DX</span></h1>
+            </div>
+
+            <div class="search-section">
+                <div class="search-wrapper">
+                    <i class="fas fa-search" style="color: var(--text-muted);"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <i class="fas fa-cog icon-btn"></i>
+                <i class="fas fa-th icon-btn"></i>
+                <i class="fas fa-bell icon-btn has-badge"></i>
+                <div class="user-pill">
+                    <span>Jonny Muraugh</span>
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Jonny+Muraugh&background=9d26b0&color=fff" alt="User">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sub Navigation -->
+        <nav class="main-nav">
+            <a href="#" class="nav-link active" onclick="switchView('dashboard')">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Newscenter</a>
+            <a href="#" class="nav-link" onclick="switchView('admin')">Administración</a>
+            <a href="#" class="nav-link">My Business Unit</a>
+            <a href="#" class="nav-link">My Communities</a>
+            <a href="#" class="nav-link">Employee Directory</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Dashboard View -->
+            <section id="dashboard-view" class="dashboard-view animate-fade">
+                <h2 class="page-title">Human Resources Hub</h2>
+
+                <div class="hero-grid">
+                    <!-- Featured Article -->
+                    <div class="featured-article">
+                        <div class="featured-img"></div>
+                        <div class="featured-content">
+                            <p class="featured-meta">Published on April 13, 2020</p>
+                            <h3 class="featured-title">New Annual Review Process</h3>
+                            <div style="display: flex; gap: 15px; font-size: 0.8rem;">
+                                <span><i class="far fa-heart"></i> 20</span>
+                                <span><i class="far fa-comment"></i> 55</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEO Sidebar -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">CEO Message</h3>
+                        <div class="ceo-message">
+                            <div class="ceo-img"></div>
+                            <div class="ceo-content">
+                                <p class="featured-meta" style="color: white; opacity: 0.8;">Published on April 13, 2020</p>
+                                <h4>Acme's 2020 Sustainability Strategy</h4>
+                                <p>A news release discusses Acme's goals for becoming greener and more sustainable than ever before.</p>
+                                <a href="#" class="ceo-link">See More CEO Messages <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Access -->
+                <div class="quick-access">
+                    <h3 class="qa-title">Quick Access</h3>
+                    <div class="qa-grid">
+                        <div class="qa-card qa-green">
+                            <div class="qa-icon"><i class="fas fa-external-link-alt"></i></div>
+                            <div class="qa-text">Request Time Off</div>
+                        </div>
+                        <div class="qa-card qa-pink">
+                            <div class="qa-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="qa-text">Report Travel Expenses</div>
+                        </div>
+                        <div class="qa-card qa-blue">
+                            <div class="qa-icon"><i class="far fa-lightbulb"></i></div>
+                            <div class="qa-text">Employee Suggestion Box</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Grid -->
+                <div id="noticias-container" class="news-grid">
+                    <!-- Rendered by JS -->
+                    <div class="news-card">
+                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400');"></div>
+                        <div class="news-card-content">
+                            <h4 class="news-card-title">New HR Organization</h4>
+                        </div>
+                    </div>
+                    <!-- ... more items ... -->
+                </div>
+            </section>
+
+            <!-- Administration View -->
+            <section id="admin-view" class="admin-view animate-fade">
+                <div class="admin-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2 style="font-size: 1.5rem; font-weight: 600;">Panel de Control Administrativo</h2>
+                        <div style="display: flex; gap: 1rem;">
+                            <button class="btn btn-primary" onclick="addNewUser()"><i class="fas fa-plus"></i> Nuevo Usuario</button>
+                            <button class="btn" style="background: var(--bg-muted); color: var(--text-main);"><i class="fas fa-download"></i> Reporte CSV</button>
+                        </div>
+                    </div>
+
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="text-align: left; color: var(--text-muted); border-bottom: 1px solid var(--border); font-size: 0.9rem;">
+                                    <th style="padding: 1rem;">Nombre</th>
+                                    <th style="padding: 1rem;">Especialidad</th>
+                                    <th style="padding: 1rem;">Estado</th>
+                                    <th style="padding: 1rem;">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="personal-table-body">
+                                <!-- Rendered by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Logs del Sistema</h3>
+                        <div id="logs-container" style="color: var(--text-muted); font-size: 0.85rem; background: var(--bg-muted); padding: 1.5rem; border-radius: 8px;">
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
